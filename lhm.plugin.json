@@ -1,0 +1,67 @@
+{
+  "identifier": "ocrrouter",
+  "name": "OCRRouter",
+  "version": "0.2.0",
+  "author": "OCRRouter",
+  "authorUrl": "https://github.com/ocrrouter",
+  "category": "productivity",
+  "cloudEndpoint": "https://api.ocrrouter.ai/v1/mcp",
+  "homepage": "https://ocrrouter.ai",
+  "description": "OCR for agents: PDFs and images to Markdown or JSON, routed across OCR models. Jina OCR and DeepSeek-OCR are free, 50,000 pages a month.",
+  "icon": "https://raw.githubusercontent.com/ocrrouter/ocrrouter/main/assets/logo.png",
+  "tags": [
+    "ocr",
+    "pdf",
+    "document-parsing",
+    "markdown",
+    "image-to-text"
+  ],
+  "tools": [
+    {
+      "name": "ocr",
+      "description": "Read a PDF or image and return its text as Markdown (tables kept as tables) or JSON blocks. Pass file_url for a public link, or file_base64 for file contents. Models jina/jina-ocr and deepseek/deepseek-ocr are free; auto picks the best model for the document.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_url": {
+            "type": "string",
+            "description": "Public http(s) URL of a PDF, PNG, JPG, WebP or GIF."
+          },
+          "file_base64": {
+            "type": "string",
+            "description": "Base64 file contents, instead of file_url."
+          },
+          "filename": {
+            "type": "string",
+            "description": "File name with extension, recommended with file_base64."
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "markdown",
+              "json",
+              "text"
+            ],
+            "description": "Output format. Default markdown."
+          },
+          "model": {
+            "type": "string",
+            "description": "Model ID from list_models, or auto (default)."
+          },
+          "pages": {
+            "type": "string",
+            "description": "Page range such as 1-5,8. Default all pages."
+          }
+        }
+      }
+    },
+    {
+      "name": "list_models",
+      "description": "List the OCR models you can route to, with credits per page (0 = free) and whether each is available.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}
