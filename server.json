@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.ocrrouter/ocrrouter",
+  "title": "OCRRouter",
+  "description": "OCR for agents: PDFs and images to Markdown or JSON, routed across OCR models. Free models included.",
+  "version": "0.2.0",
+  "websiteUrl": "https://ocrrouter.ai/docs#agents",
+  "repository": {
+    "url": "https://github.com/ocrrouter/ocrrouter",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.ocrrouter.ai/v1/mcp",
+      "headers": [
+        { "name": "Authorization", "description": "Bearer <your OCRRouter API key> from https://ocrrouter.ai/keys", "isRequired": true, "isSecret": true }
+      ]
+    }
+  ]
+}
