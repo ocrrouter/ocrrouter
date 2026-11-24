@@ -1,5 +1,7 @@
 # OCRRouter
 
+[![OCRRouter MCP connector](https://glama.ai/mcp/connectors/ai.ocrrouter/ocrrouter/badges/score.svg)](https://glama.ai/mcp/connectors/ai.ocrrouter/ocrrouter)
+
 [OCRRouter](https://ocrrouter.ai) is online OCR for images and PDFs, with an API included. One endpoint routes each document across OCR models (Mistral OCR, Gemini, GPT, Claude, Textract, Azure Document Intelligence, Google Document AI, PaddleOCR-VL, GLM-OCR, DeepSeek-OCR, Jina OCR and more) and returns Markdown or JSON.
 
 - **Free API**: `jina/jina-ocr` and `deepseek/deepseek-ocr` cost 0 credits, up to 50,000 pages a month per account.
